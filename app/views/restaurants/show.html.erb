@@ -1,0 +1,36 @@
+<h1 class="text-center"><%=@restaurant.name%></h1>
+<h2 class="text-center"><%="Amazing #{@restaurant.category.capitalize} restaurant!"%></h2>
+<div class="container">
+  <div class="row col-lg-auto">
+    <div class="card mx-auto">
+      <%@restaurant.reviews.each do |review|%>
+        <div class="card-header">Rating: <%=review.rating%>/5 ⭐️</div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p><%=review.content%></p>
+              <footer class="blockquote-footer">Someone who loves eating 🍽</footer>
+            </blockquote>
+          </div>
+        </div>
+    <%end%>
+   </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <%=link_to "Review us", new_restaurant_review_path(@restaurant), class: "btn btn-success"%>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="card text-center mt-5" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Contacts</h5>
+        <p class="card-text"><%=@restaurant.address%></p>
+        <p class="card-text"><%=@restaurant.phone_number%></p>
+        <a href="#" class="card-link">Call us</a>
+     </div>
+  </div>
+</div>

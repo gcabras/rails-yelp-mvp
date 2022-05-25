@@ -1,0 +1,14 @@
+<h1 class="text-center">Welcome to Yelp MVP</h1>
+<div container>
+  <div class="row justify-content-md-center">
+    <ul class="list-group">
+    <%@restaurants.each do |restaurant|%>
+      <li>
+        <div class="list-group-item d-flex justify-content-between">
+          <h2><%=restaurant.name%></h2><%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
+        </div>
+      </li>
+    <%end%>
+    </ul>
+  </div>
+</div>
