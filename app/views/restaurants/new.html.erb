@@ -1,7 +1,18 @@
-<%= simple_form_for @restaurant do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category %>
-  <%= f.input :address %>
-  <%= f.input :phone_number%>
-  <%= f.button :submit %>
-<% end %>
+<h1 class="text-center">Create a new restaurant</h1>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+      <div class="box text-center">
+        <div class="box-body">
+          <%= simple_form_for @restaurant do |f| %>
+            <%= f.input :name %>
+            <%= f.input :category %>
+            <%= f.input :address %>
+            <%= f.input :phone_number%>
+            <%= f.button :submit, class: "btn btn-primary text-center"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
